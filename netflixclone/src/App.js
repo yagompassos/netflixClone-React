@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Tmdb from './Tmdb';
 import MovieRow from './components/MovieRow';
+import FeaturedMovie from './components/FeaturedMovie';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
       </header>
 
       <main>
-        <section className='lists'>
+        <section className='listas'>
           {movieList.map((item,key)=>(
             <MovieRow key={key} title={item.title} items={item.items}/>
           ))}

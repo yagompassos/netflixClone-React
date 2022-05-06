@@ -1,0 +1,32 @@
+.linha{
+    margin-bottom: 30px;
+}
+
+.linha h2{
+    margin-left: 30px;
+}
+
+.linha-area{
+    overflow-x: hidden;
+    padding-left: 30px;
+}
+
+.linha-list{
+    width: 9999999px;
+}
+
+.linha-item{
+    display: inline-block;
+    width: 150px;
+}
+
+.linha-item img{
+    width: 100%;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+}
+
+.linha-item img:hover{
+    transform: scale(1);
+
+}
