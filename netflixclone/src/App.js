@@ -7,11 +7,18 @@ import FeaturedMovie from './components/FeaturedMovie';
 function App() {
 
   const[movieList, setMovieList] = useState([]);
+  const[featuredData, setFeaturedData] = useState(null);
 
   useEffect(()=>{
     const loadAll = async () => {
       let list = await Tmdb.getHomeList(); 
       setMovieList(list);
+
+      let recommended = list.filter(i=>i.slug==='toprated');
+      let randomChosen = Math.floor(Math.random() * (recommended[0].items.results.length - 1));
+      let chosen = recommended[0].items.results[randomChosen];
+      // setFeaturedData(chosen);
+      console.log(chosen);
     }
 
     loadAll();
@@ -25,11 +32,17 @@ function App() {
       </header>
 
       <main>
+
+        {featuredData &&
+          <FeaturedMovie />
+        } 
+
         <section className='listas'>
           {movieList.map((item,key)=>(
             <MovieRow key={key} title={item.title} items={item.items}/>
           ))}
         </section>
+
       </main>
 
       <footer>
