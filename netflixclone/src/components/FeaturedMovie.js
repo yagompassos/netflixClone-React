@@ -10,7 +10,9 @@ export default ({item}) => {
         }}>
             {item.title}
             <div className="featured-vertical">
-                <div className="featured-horizontal" />
+                <div className="featured-horizontal">
+                    {item.title}
+                </div> 
             </div>
         </section>
     )
