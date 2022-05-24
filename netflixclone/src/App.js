@@ -11,14 +11,16 @@ function App() {
 
   useEffect(()=>{
     const loadAll = async () => {
+      //Montando a lista de filmes que ficarão visiveis na pagina inicial
       let list = await Tmdb.getHomeList(); 
       setMovieList(list);
 
-      let recommended = list.filter(i=>i.slug==='toprated');
-      let randomChosen = Math.floor(Math.random() * (recommended[0].items.results.length - 1));
-      let chosen = recommended[0].items.results[randomChosen];
-      // setFeaturedData(chosen);
-      console.log(chosen);
+      // Escolhendo um filme destacado
+      let trending = list.filter(i=>i.slug === 'trending');
+      let randomChosen = (Math.floor(Math.random() * trending[0].items.results.length) - 1);
+      let chosen = trending[0].items.results[randomChosen]
+      let chosenInfo = await Tmdb.getMovieInfo(chosen.id, chosen.media_type);
+      setFeaturedData(chosenInfo);
     }
 
     loadAll();
@@ -34,7 +36,7 @@ function App() {
       <main>
 
         {featuredData &&
-          <FeaturedMovie />
+          <FeaturedMovie item={featuredData} />
         } 
 
         <section className='listas'>
