@@ -36,7 +36,7 @@ function App() {
       <main>
 
         {featuredData &&
-          <FeaturedMovie item={featuredData} />
+          <FeaturedMovie item={featuredData}/>
         } 
 
         <section className='listas'>
