@@ -34,13 +34,16 @@ export default ({item}) => {
                 <div className="featured-horizontal">
                     <div className="featured-name"> {titulo} </div>
                     <div className="featured-info"> 
-                        <div className="featured-pontos"> {item.vote_average*10}% relevante </div>
-                        <div className="featured-ano"> {dataLancamento.getFullYear()} </div>
-                        <div className="featured-temps"> {numero} </div>
-                        <div className="featured-overview"> {item.overview} </div>
-                        <div className="featured-buttons"> </div>
-                        <div className="featured-generos"><strong>Gêneros: </strong>{genres.join(', ')} </div>
+                        <div className="featured-info-pontos"> {item.vote_average*10}% relevante </div>
+                        <div className="featured-info-ano"> {dataLancamento.getFullYear()} </div>
+                        <div className="featured-info-temps"> {numero} </div>
                     </div>
+                    <div className="featured-overview"> {item.overview} </div>
+                    <div className="featured-buttons">
+                        <a className="featured-buttons-1" href={`/watch/${item.id}`}>▶ Assistir</a>
+                        <a className="featured-buttons-2" href={`/list/add/${item.id}`}>ⓘ Mais informações</a>
+                    </div>
+                    <div className="featured-generos"><strong>Gêneros: </strong>{genres.join(', ')} </div>
                 </div> 
             </div>
         </section>
