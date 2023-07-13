@@ -1,5 +1,5 @@
-#NEXTFIX
-##Clone do netflix
+# NEXTFIX
+## Clone do netflix
 Desenvolvido para treinar habilidades no ReactJS
 
 # Getting Started with Create React App
