@@ -11,6 +11,11 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-.listas{
+#listas{
     margin-top: -200px;
+}
+
+#resultados-pesquisa{
+    margin-top: 120px;
+    margin-left: 35px;
 }

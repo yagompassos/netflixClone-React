@@ -70,7 +70,11 @@ export default{
                     break;
             }
         }
-
         return info;
+    },
+
+    getSearchList: async () => {
+        return await basicFetch(`/discover/movie?language=pt-BR&page=1&api_key=${API_KEY}`);
     }
+
 }

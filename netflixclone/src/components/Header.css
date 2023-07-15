@@ -25,6 +25,13 @@ header.black{
     height: 100%;
 }
 
+.header--right-icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
 .header--user{
     height: 60px
 }
@@ -34,16 +41,80 @@ header.black{
 }
 
 .header--search{
-    height: 40px
+    height: 40px;
+    /* display: flex; */
 }
 .header--search img{
+    height: 40%;
+    border-radius: 3px;  
+}
+.header--btn-search{    
+    position: absolute;
+    top: 0px;
+    right: 150px;
+
     height: 100%;
-    border-radius: 3px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    color:#ffffff ;
+    background-color:transparent;
+    pointer-events: painted;  
+    z-index: 0;
 }
 
-.header--right-icons{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
+.input-search{    
+    position: absolute;
+    top: 25px;
+    right: 150px;
+
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    transition: all .5s ease-in-out;
+    background-color: transparent;
+    padding-right: 40px;
+    color:#fff;
+}
+  .input-search::placeholder{
+    color:rgba(255,255,255,.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+  .btn-search{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color:#ffffff ;
+    pointer-events: painted;  
+}
+  .btn-search:focus ~ .input-search{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 100ms (0, 0.110, 0.35, 2);
+}
+  .input-search:focus{
+    width: 300px;
+    border-radius: 0px;
+    background-color: #141414;
+    opacity: 80%;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 100ms (0, 0.110, 0.35, 2);
 }

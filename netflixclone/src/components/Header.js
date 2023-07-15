@@ -5,7 +5,7 @@ import userlogo from '../img/userlogo.jpg';
 import searchicon from '../img/searchicon.png';
 
 
-export default ({black}) => {
+export default ({black, busca, setBusca}) => {
     return (
         <header className={black ? "black" : ""}>
             <div className="header--logo">
@@ -15,9 +15,8 @@ export default ({black}) => {
             </div>
             <div className="header--right-icons">
                 <div className="header--search">
-                    <a href="/">
-                        <img src={searchicon}></img>
-                    </a>
+                    <button className="header--btn-search"><img src={searchicon}></img></button>
+                    <input type="text" value={busca} onChange={(ev) => setBusca(ev.target.value)} class="input-search" placeholder="Títulos..."></input>
                 </div>
                 <div className="header--user">
                     <a href="/">
@@ -25,7 +24,6 @@ export default ({black}) => {
                     </a>
                 </div>
             </div>
-            
         </header>
     );
 }
